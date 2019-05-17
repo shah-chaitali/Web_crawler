@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>First App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Web Crawler!</h1>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <h6> Please provide the Seed URL </h6>
+      <form method="GET">
+         {% csrf_token %}
+        <div class="form-group">
+          <lable for="exampleInputEmail1">URL:</lable>
+          <input type="text" class="form-control" name="url"> <br/>
+          <input class="btn btn-success btn-lg active" type="submit" value="Submit"> <br/>
+        </div>
+      </form><br/><br/>
+      {% for val in urllist %}
+      <p>{{val}}</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>
