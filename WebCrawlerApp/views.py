@@ -4,7 +4,7 @@ from . import crawler
 # Create your views here.
 def index(request):
     #return HttpResponse("Hello World")
-    urllist=['jhkj','jhgkh2']
+    urllist=[]
     if request.GET.get('url'):
         source=request.GET.get('url')
         #print("inside get")
